@@ -7,7 +7,7 @@ using ServiceLocator.Wave;
 
 namespace ServiceLocator.Map
 {
-    public class MapService : MonoBehaviour
+    public class MapService : GenericMonoSingleton<MapService>
     {
         [SerializeField] private EventService eventService;
         [SerializeField] private MapScriptableObject mapScriptableObject;
@@ -17,21 +17,7 @@ namespace ServiceLocator.Map
         private MapData currentMapData;
         private SpriteRenderer tileOverlay;
 
-        public static MapService Instance { get { return Instance; } }
-
-        private static MapService instance;
-
-        private void Awake()
-        {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else
-            {
-                Destroy(this.gameObject);
-            }
-        }
+        
 
 
         private void Start()
