@@ -23,14 +23,11 @@ namespace ServiceLocator.Wave
         public WaveService(WaveScriptableObject waveScriptableObject)
         {
             this.waveScriptableObject = waveScriptableObject;
-        }
-
-        private void Start()
-        {
             bloonPool = new BloonPool(waveScriptableObject);
             activeBloons = new List<BloonController>();
             SubscribeToEvents();
         }
+
 
         private void SubscribeToEvents() => GameService.Instance.eventService.OnMapSelected.AddListener(LoadWaveDataForMap);
 
