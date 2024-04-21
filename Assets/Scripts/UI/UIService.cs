@@ -44,9 +44,7 @@ namespace ServiceLocator.UI
 
         private void Start()
         {
-            monkeySelectionController = new MonkeySelectionUIController(cellContainer, monkeyCellPrefab, monkeyCellScriptableObjects,playerService);
-            MonkeySelectionPanel.SetActive(false);
-            monkeySelectionController.SetActive(false);
+            
 
             gameplayPanel.SetActive(false);
             levelSelectionPanel.SetActive(true);
