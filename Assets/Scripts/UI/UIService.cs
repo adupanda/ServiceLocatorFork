@@ -22,8 +22,7 @@ namespace ServiceLocator.UI
 
         [Header("Level Selection Panel")]
         [SerializeField] private GameObject levelSelectionPanel;
-        [SerializeField] private Button Map1Button;
-        private List<MapButton> mapButtons;
+        [SerializeField] private List<MapButton> mapButtons;
 
         [Header("Monkey Selection UI")]
         private MonkeySelectionUIController monkeySelectionController;
