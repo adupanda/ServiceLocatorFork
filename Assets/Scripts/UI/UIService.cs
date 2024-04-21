@@ -64,8 +64,17 @@ namespace ServiceLocator.UI
             this.eventService = eventService;
             this.waveService = waveService;
             this.playerService = playerService;
-
+            
             SubscribeToEvents();
+        }
+
+        private void InitializeMapSelectionUI(EventService eventService)
+        {
+            levelSelectionPanel.SetActive(true);
+            foreach (MapButton mapButton in mapButtons)
+            {
+                mapButton.Init(eventService);
+            }
         }
         public void OnMapSelected(int mapID)
         {
